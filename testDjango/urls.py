@@ -15,17 +15,8 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from sayApp import views as say
-from showApp import views as show
-
-sayUrls = [
-            url(r'^hello/', say.sayHello),
-            url(r'^hi/', say.sayHi),
-        ]
-
-showUrls = [
-            url(r'^students$', show.showStudents),
-        ]
+from sayApp.urls import urls as sayUrls
+from showApp.urls import urls as showUrls
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
